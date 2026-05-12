@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { externalLinks } from '../data/links';
+---
+<BaseLayout title="Agents Suite">
+<h1>Agents Suite</h1>
+<p>A growing set of practical data agents built to understand agent architecture from the ground up.</p>
+<p>The Agents Suite is my way of learning agent architecture by building small tools that do recognisable data work...</p>
+<section class="section"><div class="section-heading"><h2>What this suite is exploring</h2></div><ul><li><strong>Deterministic where possible</strong> — Start with logic that can be tested, debugged, and trusted.</li><li><strong>LLMs as support, not source of truth</strong> — Let the LLM polish, suggest, or explain.</li><li><strong>Bounded agent decisions</strong> — Give agents clear tasks, defined inputs, and constrained outputs.</li><li><strong>Traceable outputs and review loops</strong> — Every agent should produce artifacts you can inspect, review, and verify.</li></ul></section>
+<section class="section"><div class="section-heading"><h2>Learning Progression</h2></div><div class="grid grid-2"><div class="card"><h3>Covered so far</h3><ol><li>Deterministic CLI</li><li>Local bounded agent</li><li>Hybrid local + LLM support</li></ol></div><div class="card"><h3>Planned next</h3><ol start="4"><li>Framework agents</li><li>Multi-agent workflows</li><li>Capstone coordinator</li></ol></div></div></section>
+<section class="section"><div class="section-heading"><h2>Completed Agents</h2></div>
+<div class="grid">
+<article class="card card-feature"><p class="label">DETERMINISTIC CLI / LOCAL BOUNDED AGENT</p><h3>Data Quality Triage Agent</h3><p>Profiles datasets and flags likely data quality issues.</p><p><a class="link-arrow" href={externalLinks.dqtAgent} target="_blank" rel="noreferrer">View GitHub repo →</a></p></article>
+<article class="card card-feature"><p class="label">DETERMINISTIC CLI / CONFIG-DRIVEN VALIDATION</p><h3>Data Reconciliation Agent</h3><p>Validates source-to-target data using mapping config and traceable comparison outputs.</p><p><a class="link-arrow" href={externalLinks.reconciliationAgent} target="_blank" rel="noreferrer">View GitHub repo →</a></p></article>
+<article class="card card-feature"><p class="label">HYBRID LOCAL + LLM SUPPORT</p><h3>Data Dictionary Agent</h3><p>Creates first-pass data dictionaries from CSV and XLSX datasets.</p><p><a class="link-arrow" href={externalLinks.dictionaryAgent} target="_blank" rel="noreferrer">View GitHub repo →</a></p></article>
+</div></section>
+<section class="section"><div class="section-heading"><h2>Planned Agents</h2></div><div class="grid grid-2"><div class="card"><h3>Governance and review</h3><ul><li>Data Contract Review Agent</li><li>Sensitive Data Review Agent</li></ul><h3>Testing and onboarding</h3><ul><li>Data Test Suggestion Agent</li><li>Dataset Onboarding Reviewer Agent</li></ul></div><div class="card"><h3>Investigation and delivery</h3><ul><li>Data Quality Investigation Workflow</li><li>Project Evidence Agent</li><li>Data Migration War Room</li></ul><p>Planned agents are included to show intended direction and not completed work.</p></div></div></section>
+<section class="section"><div class="section-heading"><h2>Where this is heading</h2></div><p>The suite is moving from local deterministic tools toward agents with state, review loops, and tool-calling...</p></section>
+</BaseLayout>

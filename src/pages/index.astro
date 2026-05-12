@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Home">
+  <h1>The Workbench</h1>
+  <p>Small software projects around data, coordination, and practical AI.</p>
+  <p>This is a place for projects that are useful enough to explain properly. Some are live products. Some are learning projects. All of them are built around the same idea: keep the system understandable, make the work traceable, and avoid making things more complicated than they need to be.</p>
+  <p><strong>By Adam Ojrzynski</strong></p>
+
+  <section class="section card card-feature">
+    <p class="label">LIVE PRODUCT</p><h2>ReadyRoll</h2>
+    <p>A no-account scheduling app that helps groups find the best date to meet.</p>
+    <p>ReadyRoll started from a small coordination problem: groups want to meet, but finding a date often turns into a long thread of maybes and reminders.</p>
+    <div class="meta"><div>Status: Live product</div><div>Stack: Next.js, TypeScript, Tailwind, Supabase, Vercel</div><div>Features: Discord bot integration</div></div>
+    <p><a class="link-arrow" href="/readyroll/">Read about ReadyRoll →</a></p>
+  </section>
+
+  <section class="section card card-feature">
+    <p class="label">AGENTS SUITE</p><h2>Agents Suite</h2>
+    <p>A growing suite of practical data agents built to understand agent architecture from the ground up.</p>
+    <p>The suite starts with simple local Python agents that do recognisable data work: profiling datasets, reconciling records, and drafting data dictionaries. The aim is to learn where deterministic logic, review loops, and LLM support each belong.</p>
+    <div class="meta"><div>Type: Python CLI agents</div><div>Approach: Deterministic checks, traceable reports</div><div>Output: Optional LLM polish</div></div>
+    <p><strong>Deterministic CLI → Hybrid local + LLM → Framework agents → Multi-agent workflows → Capstone coordinator</strong></p>
+    <p><a class="link-arrow" href="/agents/">Explore the suite →</a></p>
+  </section>
+
+  <section class="section card"><p class="label">ON THE BENCH</p><h2>Future work</h2><p>This site will grow slowly. New projects will be added when they are mature enough to explain clearly and useful enough to sit alongside the main work.</p></section>
+  <section class="section"><div class="section-heading"><h2>Working Principles</h2></div><ul><li>Useful before impressive</li><li>Deterministic where possible</li><li>LLMs as support, not source of truth</li><li>Clear traces, reports, and documentation</li><li>Small systems that are easy to inspect</li></ul></section>
+</BaseLayout>

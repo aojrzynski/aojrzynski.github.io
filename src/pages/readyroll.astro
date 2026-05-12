@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { externalLinks } from '../data/links';
+---
+<BaseLayout title="ReadyRoll">
+<h1>ReadyRoll</h1><p>A lightweight scheduling board for groups that meet regularly.</p>
+<p>ReadyRoll helps recurring groups keep track of who can make which dates, without making everyone create an account...</p>
+<p><a class="link-arrow" href={externalLinks.readyroll} target="_blank" rel="noreferrer">Open ReadyRoll →</a></p>
+<section class="section card"><p class="label">PRODUCT STATUS</p><p>ReadyRoll is live and usable today. It is in early growth and built for small groups organising board games, RPGs, casual meetups, and similar plans.</p></section>
+<section class="section"><div class="section-heading"><h2>What ReadyRoll does</h2></div><div class="grid grid-2"><div class="card">Create a planning board with a date range</div><div class="card">Collect availability across weeks or months</div><div class="card">Let people vote Yes / Maybe / No</div><div class="card">Show perfect days and best alternatives</div><div class="card">Mark planned days</div><div class="card">Extend or reuse the board over time</div><div class="card">Discord bot integration</div></div></section>
+<section class="section"><div class="section-heading"><h2>How it works</h2></div><ol><li>Host creates a planning board</li><li>Participants join by link</li><li>Availability builds over time</li><li>Best dates surface automatically</li><li>Host marks planned days and continues using the board</li></ol></section>
+<section class="section"><div class="section-heading"><h2>Where ReadyRoll is heading</h2></div><ul><li>Better group-chat support</li><li>Richer planning boards</li><li>Optional accounts</li><li>Stronger organiser tools</li></ul></section>
+<section class="section"><div class="section-heading"><h2>Technical notes</h2></div><ul><li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>Supabase</li><li>Vercel</li><li>Discord Interactions API</li><li>Link/token participation model</li><li>Server-side Supabase access</li></ul></section>
+</BaseLayout>

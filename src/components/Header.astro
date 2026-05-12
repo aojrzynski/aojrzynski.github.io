@@ -1,0 +1,29 @@
+---
+const { currentPath } = Astro.props;
+const nav = [
+  { href: '/', label: 'Home' },
+  { href: '/readyroll/', label: 'ReadyRoll' },
+  { href: '/agents/', label: 'Agents Suite' },
+  { href: '/about/', label: 'About' }
+];
+---
+<header class="container site-header">
+  <a href="/" class="brand">The Workbench</a>
+  <nav aria-label="Primary">
+    <ul>
+      {nav.map((item) => (
+        <li>
+          <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>{item.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+<style>
+.site-header{display:flex;justify-content:space-between;gap:1rem;padding:1.25rem 1.25rem .75rem;align-items:center}
+.brand{text-decoration:none;font-weight:600}
+ul{display:flex;flex-wrap:wrap;list-style:none;gap:1rem;margin:0;padding:0}
+a{text-decoration:none;color:var(--color-muted)}
+a[aria-current='page']{color:var(--color-ink);text-decoration:underline;text-underline-offset:.25em}
+a:hover,a:focus-visible{color:var(--color-ink)}
+</style>

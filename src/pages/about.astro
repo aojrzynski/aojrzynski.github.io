@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { externalLinks } from '../data/links';
+---
+<BaseLayout title="About">
+<h1>About</h1>
+<p>I work in data and product, and I build small software projects outside work.</p>
+<p>Most of my work sits somewhere between messy data, unclear requirements, product decisions, and delivery...</p>
+<section class="section"><div class="section-heading"><h2>How I got here</h2></div><p>I started closer to the hands-on side of things...</p></section>
+<section class="section"><div class="section-heading"><h2>Why The Workbench exists</h2></div><p>The Workbench is where I keep the projects that are useful enough to explain properly.</p></section>
+<section class="section"><div class="section-heading"><h2>How I like to build</h2></div><ul><li>Small systems</li><li>Useful before impressive</li><li>Traceable by default</li><li>AI with boundaries</li></ul></section>
+<section class="section"><div class="section-heading"><h2>Contact</h2></div><p><a class="link-arrow" href={externalLinks.linkedin} target="_blank" rel="noreferrer">LinkedIn →</a></p><p><a class="link-arrow" href={externalLinks.github} target="_blank" rel="noreferrer">GitHub →</a></p><p>LinkedIn is the best place to contact me for now.</p></section>
+</BaseLayout>
