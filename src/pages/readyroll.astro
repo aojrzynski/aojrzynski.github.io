@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { externalLinks } from '../data/links';
+---
+<BaseLayout title="ReadyRoll">
+  <section class="hero">
+    <h1>ReadyRoll</h1>
+    <p>A lightweight scheduling board for groups that meet regularly.</p>
+    <p>ReadyRoll helps recurring groups keep track of who can make which dates, without making everyone create an account. A host creates a shared date range, people mark availability, and the group can see the best upcoming dates without digging through chat.</p>
+    <p>It is live, early, and deliberately small: enough structure to solve the planning problem without turning casual meetups into admin.</p>
+    <p><a class="link-arrow" href={externalLinks.readyroll} target="_blank" rel="noreferrer">Open ReadyRoll →</a></p>
+  </section>
+
+  <section class="section card">
+    <p class="label">PRODUCT STATUS</p>
+    <p>ReadyRoll is live and usable today. It is in early growth and built for small groups organising board games, RPGs, casual meetups, and similar plans.</p>
+    <p>The product currently supports accountless planning and a Discord bot integration. It is being improved around real group usage and feedback.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-heading"><h2>Why this exists</h2></div>
+    <p>Recurring groups often need more than a one-off poll, but less than a full calendar system. Chat is good for conversation but bad at maintaining availability across weeks or months.</p>
+    <p>People reply at different times, answers get buried, and the organiser ends up asking the same questions every few days. ReadyRoll gives the group a shared view of availability without replacing the places they already talk.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-heading"><h2>Why accountless?</h2></div>
+    <p>Most casual groups do not need another login just to find a date. ReadyRoll uses links and tokens instead of requiring accounts. This keeps planning lightweight and avoids collecting personal profiles for basic scheduling.</p>
+    <p>The trade-off is that links need to be managed carefully and some persistent group features are easier with accounts. The long-term direction is to add optional accounts alongside the accountless flow, not replace it.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-heading"><h2>What ReadyRoll does</h2></div>
+    <div class="grid grid-2">
+      <article class="card"><strong>Create a planning board with a date range</strong><p>Set up a shared board covering several weeks or months. Give it a name like “Game Night” or “RPG Session” and generate invite links.</p></article>
+      <article class="card"><strong>Collect availability across weeks or months</strong><p>Participants mark availability across the entire date range, not just one meeting at a time.</p></article>
+      <article class="card"><strong>Let people vote Yes / Maybe / No</strong><p>Participants can update their votes as plans change. Votes are saved against their participant token.</p></article>
+      <article class="card"><strong>Show perfect days and best alternatives</strong><p>ReadyRoll calculates which dates work for everyone, and highlights the best alternatives when perfect days are not available.</p></article>
+      <article class="card"><strong>Mark planned days</strong><p>The host marks dates as planned once the group has decided. The board can continue to be used for future planning.</p></article>
+      <article class="card"><strong>Extend or reuse the board over time</strong><p>Hosts can extend the date range or reuse the board rather than starting from scratch each time.</p></article>
+      <article class="card"><strong>Discord bot integration</strong><p>Connect the board to a Discord channel for group visibility and quick access.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading"><h2>How it works</h2></div>
+    <ol>
+      <li><strong>Host creates a planning board</strong><br/>The host sets up a board with a rolling date range and receives an admin link for managing it.</li>
+      <li><strong>Participants join by link</strong><br/>Each participant receives a unique link. No account, no password, no signup form.</li>
+      <li><strong>Availability builds over time</strong><br/>Participants mark availability across the date range and can update votes as their schedule changes.</li>
+      <li><strong>Best dates surface automatically</strong><br/>ReadyRoll shows which dates work for everyone, and highlights the best alternatives.</li>
+      <li><strong>Host marks planned days and continues using the board</strong><br/>Once a date is chosen, the host marks it as planned. The board stays active for future planning.</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <div class="section-heading"><h2>Built for group chat</h2></div>
+    <p>ReadyRoll does not try to replace the places groups already talk. The Discord bot lets a group connect an event to a channel, check status, view planned days, and send people back to the voting page when needed.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-heading"><h2>Where ReadyRoll is heading</h2></div>
+    <p class="muted-note">Roadmap is subject to change based on usage and feedback.</p>
+    <ul>
+      <li><strong>Better group-chat support</strong><br/>Improve the Discord bot with clearer summaries, reminders, and board visibility. Explore support for other group-chat tools such as Slack.</li>
+      <li><strong>Richer planning boards</strong><br/>Add features like notes, time preferences, location tracking, and better recurring date management.</li>
+      <li><strong>Optional accounts</strong><br/>Add accounts for people who want saved groups, history, and preferences, while keeping the current accountless flow available.</li>
+      <li><strong>Stronger organiser tools</strong><br/>Improve board management, participant controls, and organiser workflows.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-heading"><h2>Technical notes</h2></div>
+    <ul><li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>Supabase</li><li>Vercel</li><li>Discord Interactions API</li><li>Link/token participation model</li><li>Server-side Supabase access</li></ul>
+  </section>
+</BaseLayout>

@@ -1,0 +1,19 @@
+---
+import { externalLinks } from '../data/links';
+---
+<footer class="container footer">
+  <div class="brand-wrap"><span class="brand-mark" aria-hidden="true"></span><span>The Workbench</span></div>
+  <div class="links">
+    <a href={externalLinks.github} target="_blank" rel="noreferrer">GitHub</a>
+    <a href={externalLinks.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+    <a href={externalLinks.readyroll} target="_blank" rel="noreferrer">ReadyRoll</a>
+  </div>
+</footer>
+<style>
+.footer{border-top:1px solid var(--color-border);padding:1.25rem 1.5rem 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:var(--color-muted);align-items:center}
+.brand-wrap{display:inline-flex;align-items:center;gap:.6rem;color:var(--color-ink);font-weight:500}
+.brand-mark{width:3px;height:16px;background:var(--color-accent);border-radius:2px}
+.links{display:flex;gap:1rem;flex-wrap:wrap}
+.links a{text-decoration:none;color:var(--color-muted);font-size:.95rem}
+.links a:hover,.links a:focus-visible{text-decoration:underline;color:var(--color-ink)}
+</style>
