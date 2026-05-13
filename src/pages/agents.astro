@@ -10,66 +10,69 @@ import { externalLinks } from '../data/links';
     <p>The point is not to hide everything behind an LLM. The point is to understand what should be automated, what should be reviewed, and where an LLM is actually useful.</p>
   </section>
 
-  <section class="section">
+  <section class="section wide-section">
     <div class="section-heading"><h2>What this suite is exploring</h2></div>
-    <ul>
-      <li><strong>Deterministic where possible</strong><br/>Start with logic that can be tested, debugged, and trusted. Use probabilistic outputs only when deterministic checks are not enough.</li>
-      <li><strong>LLMs as support, not source of truth</strong><br/>Let the LLM polish, suggest, or explain. Do not let it make core decisions about data quality, correctness, or business logic.</li>
-      <li><strong>Bounded agent decisions</strong><br/>Give agents clear tasks, defined inputs, and constrained outputs. Avoid open-ended agent loops that are hard to trace or stop.</li>
-      <li><strong>Traceable outputs and review loops</strong><br/>Every agent should produce artifacts you can inspect, review, and verify. Make the work visible so others can follow it.</li>
-    </ul>
-  </section>
-
-  <section class="section">
-    <div class="section-heading"><h2>Learning Progression</h2></div>
     <div class="grid grid-2">
-      <article class="card"><h3>Covered so far</h3><ol><li><strong>Deterministic CLI</strong><br/>Local Python tools that run predictable checks and produce traceable outputs without LLMs.</li><li><strong>Local bounded agent</strong><br/>Agents with constrained tasks, defined inputs, and clear stopping points.</li><li><strong>Hybrid local + LLM support</strong><br/>Combine deterministic logic with optional LLM polish for summaries or suggestions.</li></ol></article>
-      <article class="card"><h3>Planned next</h3><ol start="4"><li><strong>Framework agents</strong><br/>Use agent frameworks for tool-calling, state management, and review loops.</li><li><strong>Multi-agent workflows</strong><br/>Multiple specialist agents working together on connected tasks.</li><li><strong>Capstone coordinator</strong><br/>A coordinator agent that routes work across specialist agents based on task type and context.</li></ol></article>
+      <article class="card"><h3>Deterministic where possible</h3><p>Start with logic that can be tested, debugged, and trusted. Use probabilistic outputs only when deterministic checks are not enough.</p></article>
+      <article class="card"><h3>LLMs as support, not source of truth</h3><p>Let the LLM polish, suggest, or explain. Do not let it make core decisions about data quality, correctness, or business logic.</p></article>
+      <article class="card"><h3>Bounded agent decisions</h3><p>Give agents clear tasks, defined inputs, and constrained outputs. Avoid open-ended agent loops that are hard to trace or stop.</p></article>
+      <article class="card"><h3>Traceable outputs and review loops</h3><p>Every agent should produce artifacts you can inspect, review, and verify. Make the work visible so others can follow it.</p></article>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section wide-section">
+    <div class="section-heading"><h2>Learning Progression</h2></div>
+    <div class="grid grid-2">
+      <article class="card"><p class="label">Covered so far</p><h3>Current stages</h3><ol class="timeline"><li><strong>Deterministic CLI</strong><br/>Local Python tools that run predictable checks and produce traceable outputs without LLMs.</li><li><strong>Local bounded agent</strong><br/>Agents with constrained tasks, defined inputs, and clear stopping points.</li><li><strong>Hybrid local + LLM support</strong><br/>Combine deterministic logic with optional LLM polish for summaries or suggestions.</li></ol></article>
+      <article class="card"><p class="label">Planned next</p><h3>Upcoming stages</h3><ol class="timeline" start="4"><li><strong>Framework agents</strong><br/>Use agent frameworks for tool-calling, state management, and review loops.</li><li><strong>Multi-agent workflows</strong><br/>Multiple specialist agents working together on connected tasks.</li><li><strong>Capstone coordinator</strong><br/>A coordinator agent that routes work across specialist agents based on task type and context.</li></ol></article>
+    </div>
+  </section>
+
+  <section class="section wide-section">
     <div class="section-heading"><h2>Completed Agents</h2></div>
     <div class="grid">
       <article class="card card-feature">
         <p class="label">DETERMINISTIC CLI / LOCAL BOUNDED AGENT</p>
         <h3>Data Quality Triage Agent</h3>
-        <p><strong>Summary:</strong> Profiles datasets and flags likely data quality issues.</p>
+        <div class="agent-points"><p><strong>Summary:</strong> Profiles datasets and flags likely data quality issues.</p>
         <p><strong>Why it exists:</strong> Messy datasets often need a quick first pass before anyone knows where to look.</p>
         <p><strong>What it does:</strong> Runs deterministic checks for missing values, duplicate keys, date gaps, outliers, schema surprises, and unexpected categorical values.</p>
         <p><strong>Demonstrates:</strong> A local deterministic agent can be useful without handing core judgement to an LLM.</p>
         <p><strong>Outputs:</strong> Traceable reports, run summaries, optional LLM-polished explanation.</p>
+        </div>
         <p><a class="link-arrow" href={externalLinks.dqtAgent} target="_blank" rel="noreferrer">View GitHub repo →</a></p>
       </article>
       <article class="card card-feature">
         <p class="label">DETERMINISTIC CLI / CONFIG-DRIVEN VALIDATION</p>
         <h3>Data Reconciliation Agent</h3>
-        <p><strong>Summary:</strong> Validates source-to-target data using mapping config and traceable comparison outputs.</p>
+        <div class="agent-points"><p><strong>Summary:</strong> Validates source-to-target data using mapping config and traceable comparison outputs.</p>
         <p><strong>Why it exists:</strong> Migration and integration work often needs a clear answer to what matched, what is missing, and what changed.</p>
         <p><strong>What it does:</strong> Detects missing records, unexpected records, and value mismatches between source and target datasets.</p>
         <p><strong>Demonstrates:</strong> A practical agent can combine config, deterministic comparison logic, exception outputs, and optional summary polish.</p>
         <p><strong>Outputs:</strong> Traceable reports, exception CSVs, optional LLM summary.</p>
+        </div>
         <p><a class="link-arrow" href={externalLinks.reconciliationAgent} target="_blank" rel="noreferrer">View GitHub repo →</a></p>
       </article>
       <article class="card card-feature">
         <p class="label">HYBRID LOCAL + LLM SUPPORT</p>
         <h3>Data Dictionary Agent</h3>
-        <p><strong>Summary:</strong> Creates first-pass data dictionaries from CSV and XLSX datasets.</p>
+        <div class="agent-points"><p><strong>Summary:</strong> Creates first-pass data dictionaries from CSV and XLSX datasets.</p>
         <p><strong>Why it exists:</strong> Data dictionaries are useful but often missing, stale, or too slow to create manually.</p>
         <p><strong>What it does:</strong> Profiles datasets, infers useful field information, applies config overrides, and creates first-pass dictionary outputs.</p>
         <p><strong>Demonstrates:</strong> A hybrid local-first agent can use deterministic profiling as the base and LLM suggestions only for safe description polish.</p>
         <p><strong>Outputs:</strong> Data dictionary draft, trace artifacts, report artifacts, optional LLM description suggestions.</p>
+        </div>
         <p><a class="link-arrow" href={externalLinks.dictionaryAgent} target="_blank" rel="noreferrer">View GitHub repo →</a></p>
       </article>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section wide-section">
     <div class="section-heading"><h2>Planned Agents</h2></div>
     <div class="grid grid-3">
-      <article class="card"><h3>Governance and review</h3><ul><li>Data Contract Review Agent</li><li>Sensitive Data Review Agent</li></ul></article>
-      <article class="card"><h3>Testing and onboarding</h3><ul><li>Data Test Suggestion Agent</li><li>Dataset Onboarding Reviewer Agent</li></ul></article>
-      <article class="card"><h3>Investigation and delivery</h3><ul><li>Data Quality Investigation Workflow</li><li>Project Evidence Agent</li><li>Data Migration War Room</li></ul></article>
+      <article class="card"><h3>Governance and review</h3><ul class="quiet-list"><li>Data Contract Review Agent</li><li>Sensitive Data Review Agent</li></ul></article>
+      <article class="card"><h3>Testing and onboarding</h3><ul class="quiet-list"><li>Data Test Suggestion Agent</li><li>Dataset Onboarding Reviewer Agent</li></ul></article>
+      <article class="card"><h3>Investigation and delivery</h3><ul class="quiet-list"><li>Data Quality Investigation Workflow</li><li>Project Evidence Agent</li><li>Data Migration War Room</li></ul></article>
     </div>
     <p class="muted-note">Planned agents are included to show the intended direction of the suite. They are not presented as completed work.</p>
   </section>

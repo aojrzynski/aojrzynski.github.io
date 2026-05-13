@@ -17,19 +17,19 @@ import { externalLinks } from '../data/links';
     <p>The product currently supports accountless planning and a Discord bot integration. It is being improved around real group usage and feedback.</p>
   </section>
 
-  <section class="section">
+  <section class="section prose">
     <div class="section-heading"><h2>Why this exists</h2></div>
     <p>Recurring groups often need more than a one-off poll, but less than a full calendar system. Chat is good for conversation but bad at maintaining availability across weeks or months.</p>
     <p>People reply at different times, answers get buried, and the organiser ends up asking the same questions every few days. ReadyRoll gives the group a shared view of availability without replacing the places they already talk.</p>
   </section>
 
-  <section class="section">
+  <section class="section prose">
     <div class="section-heading"><h2>Why accountless?</h2></div>
     <p>Most casual groups do not need another login just to find a date. ReadyRoll uses links and tokens instead of requiring accounts. This keeps planning lightweight and avoids collecting personal profiles for basic scheduling.</p>
     <p>The trade-off is that links need to be managed carefully and some persistent group features are easier with accounts. The long-term direction is to add optional accounts alongside the accountless flow, not replace it.</p>
   </section>
 
-  <section class="section">
+  <section class="section wide-section">
     <div class="section-heading"><h2>What ReadyRoll does</h2></div>
     <div class="grid grid-2">
       <article class="card"><strong>Create a planning board with a date range</strong><p>Set up a shared board covering several weeks or months. Give it a name like “Game Night” or “RPG Session” and generate invite links.</p></article>
@@ -42,26 +42,26 @@ import { externalLinks } from '../data/links';
     </div>
   </section>
 
-  <section class="section">
+  <section class="section prose">
     <div class="section-heading"><h2>How it works</h2></div>
-    <ol>
-      <li><strong>Host creates a planning board</strong><br/>The host sets up a board with a rolling date range and receives an admin link for managing it.</li>
-      <li><strong>Participants join by link</strong><br/>Each participant receives a unique link. No account, no password, no signup form.</li>
-      <li><strong>Availability builds over time</strong><br/>Participants mark availability across the date range and can update votes as their schedule changes.</li>
-      <li><strong>Best dates surface automatically</strong><br/>ReadyRoll shows which dates work for everyone, and highlights the best alternatives.</li>
-      <li><strong>Host marks planned days and continues using the board</strong><br/>Once a date is chosen, the host marks it as planned. The board stays active for future planning.</li>
+    <ol class="steps">
+      <li><span class="steps-count">Step 1</span><strong>Host creates a planning board</strong><br/>The host sets up a board with a rolling date range and receives an admin link for managing it.</li>
+      <li><span class="steps-count">Step 2</span><strong>Participants join by link</strong><br/>Each participant receives a unique link. No account, no password, no signup form.</li>
+      <li><span class="steps-count">Step 3</span><strong>Availability builds over time</strong><br/>Participants mark availability across the date range and can update votes as their schedule changes.</li>
+      <li><span class="steps-count">Step 4</span><strong>Best dates surface automatically</strong><br/>ReadyRoll shows which dates work for everyone, and highlights the best alternatives.</li>
+      <li><span class="steps-count">Step 5</span><strong>Host marks planned days and continues using the board</strong><br/>Once a date is chosen, the host marks it as planned. The board stays active for future planning.</li>
     </ol>
   </section>
 
-  <section class="section">
+  <section class="section prose">
     <div class="section-heading"><h2>Built for group chat</h2></div>
     <p>ReadyRoll does not try to replace the places groups already talk. The Discord bot lets a group connect an event to a channel, check status, view planned days, and send people back to the voting page when needed.</p>
   </section>
 
-  <section class="section">
+  <section class="section prose">
     <div class="section-heading"><h2>Where ReadyRoll is heading</h2></div>
     <p class="muted-note">Roadmap is subject to change based on usage and feedback.</p>
-    <ul>
+    <ul class="quiet-list">
       <li><strong>Better group-chat support</strong><br/>Improve the Discord bot with clearer summaries, reminders, and board visibility. Explore support for other group-chat tools such as Slack.</li>
       <li><strong>Richer planning boards</strong><br/>Add features like notes, time preferences, location tracking, and better recurring date management.</li>
       <li><strong>Optional accounts</strong><br/>Add accounts for people who want saved groups, history, and preferences, while keeping the current accountless flow available.</li>
@@ -69,8 +69,10 @@ import { externalLinks } from '../data/links';
     </ul>
   </section>
 
-  <section class="section">
+  <section class="section prose">
     <div class="section-heading"><h2>Technical notes</h2></div>
-    <ul><li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>Supabase</li><li>Vercel</li><li>Discord Interactions API</li><li>Link/token participation model</li><li>Server-side Supabase access</li></ul>
+    <div class="notes-grid">
+      <div>Next.js</div><div>TypeScript</div><div>Tailwind CSS</div><div>Supabase</div><div>Vercel</div><div>Discord Interactions API</div><div>Link/token participation model</div><div>Server-side Supabase access</div>
+    </div>
   </section>
 </BaseLayout>
