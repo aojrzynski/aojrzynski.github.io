@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Home">
+  <div class="home-page">
   <section class="hero">
     <h1>The Workbench</h1>
     <p>Small software projects around data, coordination, and practical AI.</p>
@@ -9,49 +10,53 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p><strong>By Adam Ojrzynski</strong></p>
   </section>
 
-  <section class="section card card-feature wide-section">
+  <section class="section card card-feature home-card wide-section">
     <p class="label">LIVE PRODUCT</p>
     <h2>ReadyRoll</h2>
-    <p>A lightweight scheduling board for groups that meet regularly.</p>
-    <p>ReadyRoll helps recurring groups keep track of availability across a shared date range, without making everyone create an account. A host creates a board, shares a link, people mark when they can attend, and the group can see the best upcoming dates without digging through chat.</p>
-    <div class="meta">
-      <div><strong>Status:</strong> Live product</div>
-      <div><strong>Stack:</strong> Next.js, TypeScript, Tailwind, Supabase, Vercel</div>
-      <div><strong>Features:</strong> Discord bot integration</div>
+    <p>A no-account scheduling app that helps groups find the best date to meet.</p>
+    <p class="narrative-block">ReadyRoll started from a small coordination problem: groups want to meet, but finding a date often turns into a long thread of maybes and reminders.</p>
+    <div class="meta-grid">
+      <div><p class="meta-label">STATUS</p><p class="meta-value">Live product</p></div>
+      <div><p class="meta-label">STACK</p><p class="meta-value">Next.js, TypeScript, Tailwind, Supabase, Vercel</p></div>
+      <div><p class="meta-label">FEATURES</p><p class="meta-value">Discord bot integration</p></div>
     </div>
-    <p><a class="link-arrow" href="/readyroll/">Read about ReadyRoll →</a></p>
+    <p class="card-link-row"><a class="link-arrow" href="/readyroll/">Read about ReadyRoll →</a></p>
   </section>
 
-  <section class="section card card-feature wide-section">
+  <section class="section card card-feature home-card wide-section">
     <p class="label">AGENTS SUITE</p>
     <h2>Agents Suite</h2>
     <p>A growing suite of practical data agents built to understand agent architecture from the ground up.</p>
-    <p>The suite starts with simple local Python agents that do recognisable data work: profiling datasets, reconciling records, and drafting data dictionaries. The aim is to learn where deterministic logic, review loops, and LLM support each belong.</p>
-    <div class="meta">
-      <div><strong>Type:</strong> Python CLI agents</div>
-      <div><strong>Approach:</strong> Deterministic checks, traceable reports</div>
-      <div><strong>Output:</strong> Optional LLM polish</div>
+    <p class="narrative-block">The suite starts with simple local Python agents that do recognisable data work: profiling datasets, reconciling records, and drafting data dictionaries. The aim is to learn where deterministic logic, review loops, and LLM support each belong.</p>
+    <div class="meta-grid">
+      <div><p class="meta-label">TYPE</p><p class="meta-value">Python CLI agents</p></div>
+      <div><p class="meta-label">APPROACH</p><p class="meta-value">Deterministic checks, traceable reports</p></div>
+      <div><p class="meta-label">OUTPUT</p><p class="meta-value">Optional LLM polish</p></div>
     </div>
-    <div class="progression-pills" aria-label="Agents suite progression">
-      <span>Deterministic CLI</span><span>Hybrid local + LLM</span><span>Framework agents</span><span>Multi-agent workflows</span><span>Capstone coordinator</span>
+    <div class="progression-row">
+      <p class="meta-label">PROGRESSION</p>
+      <div class="progression-pills" aria-label="Agents suite progression">
+        <span>Deterministic CLI</span><i aria-hidden="true">→</i><span>Hybrid local + LLM</span><i aria-hidden="true">→</i><span>Framework agents</span><i aria-hidden="true">→</i><span>Multi-agent workflows</span><i aria-hidden="true">→</i><span>Capstone coordinator</span>
+      </div>
     </div>
-    <p><a class="link-arrow" href="/agents/">Explore the suite →</a></p>
+    <p class="card-link-row"><a class="link-arrow" href="/agents/">Explore the suite →</a></p>
   </section>
 
-  <section class="section card card-future wide-section">
+  <section class="section card card-future home-card wide-section">
     <p class="label">ON THE BENCH</p>
     <h2>Future work</h2>
     <p>This site will grow slowly. New projects will be added when they are mature enough to explain clearly and useful enough to sit alongside the main work.</p>
   </section>
 
-  <section class="section wide-section">
+  <section class="section section-principles wide-section">
     <div class="section-heading"><h2>Working Principles</h2></div>
-    <div class="principles-grid">
-      <article class="principle-item"><h3>Useful before impressive</h3><p>Build what solves real problems, not what sounds clever.</p></article>
-      <article class="principle-item"><h3>Deterministic where possible</h3><p>Prefer predictable logic over probabilistic outputs when you can.</p></article>
-      <article class="principle-item"><h3>LLMs as support, not source of truth</h3><p>Use AI for polish and suggestions, not as the primary decision maker.</p></article>
-      <article class="principle-item"><h3>Clear traces, reports, and documentation</h3><p>Make the work visible so others can follow and verify it.</p></article>
-      <article class="principle-item"><h3>Small systems that are easy to inspect</h3><p>Keep projects simple enough to understand completely.</p></article>
-    </div>
+    <ul class="principles-list">
+      <li><h3>Useful before impressive</h3><p>Build what solves real problems, not what sounds clever.</p></li>
+      <li><h3>Deterministic where possible</h3><p>Prefer predictable logic over probabilistic outputs when you can.</p></li>
+      <li><h3>LLMs as support, not source of truth</h3><p>Use AI for polish and suggestions, not as the primary decision maker.</p></li>
+      <li><h3>Clear traces, reports, and documentation</h3><p>Make the work visible so others can follow and verify it.</p></li>
+      <li><h3>Small systems that are easy to inspect</h3><p>Keep projects simple enough to understand completely.</p></li>
+    </ul>
   </section>
+  </div>
 </BaseLayout>
