@@ -3,15 +3,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { externalLinks } from '../data/links';
 ---
 <BaseLayout title="ReadyRoll">
+  <div class="content-page">
   <section class="hero">
     <h1>ReadyRoll</h1>
-    <p>A lightweight scheduling board for groups that meet regularly.</p>
+    <p class="hero-subtitle">A lightweight scheduling board for groups that meet regularly.</p>
     <p>ReadyRoll helps recurring groups keep track of who can make which dates, without making everyone create an account. A host creates a shared date range, people mark availability, and the group can see the best upcoming dates without digging through chat.</p>
     <p>It is live, early, and deliberately small: enough structure to solve the planning problem without turning casual meetups into admin.</p>
     <p><a class="link-arrow" href={externalLinks.readyroll} target="_blank" rel="noreferrer">Open ReadyRoll →</a></p>
   </section>
 
-  <section class="section card">
+  <section class="section card status-callout prose">
     <p class="label">PRODUCT STATUS</p>
     <p>ReadyRoll is live and usable today. It is in early growth and built for small groups organising board games, RPGs, casual meetups, and similar plans.</p>
     <p>The product currently supports accountless planning and a Discord bot integration. It is being improved around real group usage and feedback.</p>
@@ -31,26 +32,28 @@ import { externalLinks } from '../data/links';
 
   <section class="section wide-section">
     <div class="section-heading"><h2>What ReadyRoll does</h2></div>
-    <div class="grid grid-2">
-      <article class="card"><strong>Create a planning board with a date range</strong><p>Set up a shared board covering several weeks or months. Give it a name like “Game Night” or “RPG Session” and generate invite links.</p></article>
-      <article class="card"><strong>Collect availability across weeks or months</strong><p>Participants mark availability across the entire date range, not just one meeting at a time.</p></article>
-      <article class="card"><strong>Let people vote Yes / Maybe / No</strong><p>Participants can update their votes as plans change. Votes are saved against their participant token.</p></article>
-      <article class="card"><strong>Show perfect days and best alternatives</strong><p>ReadyRoll calculates which dates work for everyone, and highlights the best alternatives when perfect days are not available.</p></article>
-      <article class="card"><strong>Mark planned days</strong><p>The host marks dates as planned once the group has decided. The board can continue to be used for future planning.</p></article>
-      <article class="card"><strong>Extend or reuse the board over time</strong><p>Hosts can extend the date range or reuse the board rather than starting from scratch each time.</p></article>
-      <article class="card"><strong>Discord bot integration</strong><p>Connect the board to a Discord channel for group visibility and quick access.</p></article>
+    <div class="grid grid-2 feature-grid">
+      <article class="card feature-card"><h3>Create a planning board with a date range</h3><p>Set up a shared board covering several weeks or months. Give it a name like “Game Night” or “RPG Session” and generate invite links.</p></article>
+      <article class="card feature-card"><h3>Collect availability across weeks or months</h3><p>Participants mark availability across the entire date range, not just one meeting at a time.</p></article>
+      <article class="card feature-card"><h3>Let people vote Yes / Maybe / No</h3><p>Participants can update their votes as plans change. Votes are saved against their participant token.</p></article>
+      <article class="card feature-card"><h3>Show perfect days and best alternatives</h3><p>ReadyRoll calculates which dates work for everyone, and highlights the best alternatives when perfect days are not available.</p></article>
+      <article class="card feature-card"><h3>Mark planned days</h3><p>The host marks dates as planned once the group has decided. The board can continue to be used for future planning.</p></article>
+      <article class="card feature-card"><h3>Extend or reuse the board over time</h3><p>Hosts can extend the date range or reuse the board rather than starting from scratch each time.</p></article>
+      <article class="card feature-card"><h3>Discord bot integration</h3><p>Connect the board to a Discord channel for group visibility and quick access.</p></article>
     </div>
   </section>
 
   <section class="section prose">
     <div class="section-heading"><h2>How it works</h2></div>
-    <ol class="steps">
-      <li><span class="steps-count">Step 1</span><strong>Host creates a planning board</strong><br/>The host sets up a board with a rolling date range and receives an admin link for managing it.</li>
-      <li><span class="steps-count">Step 2</span><strong>Participants join by link</strong><br/>Each participant receives a unique link. No account, no password, no signup form.</li>
-      <li><span class="steps-count">Step 3</span><strong>Availability builds over time</strong><br/>Participants mark availability across the date range and can update votes as their schedule changes.</li>
-      <li><span class="steps-count">Step 4</span><strong>Best dates surface automatically</strong><br/>ReadyRoll shows which dates work for everyone, and highlights the best alternatives.</li>
-      <li><span class="steps-count">Step 5</span><strong>Host marks planned days and continues using the board</strong><br/>Once a date is chosen, the host marks it as planned. The board stays active for future planning.</li>
-    </ol>
+    <div class="contained-panel">
+      <ol class="contained-steps">
+        <li><span class="step-marker">1</span><div class="step-content"><strong>Host creates a planning board</strong><p>The host sets up a board with a rolling date range and receives an admin link for managing it.</p></div></li>
+        <li><span class="step-marker">2</span><div class="step-content"><strong>Participants join by link</strong><p>Each participant receives a unique link. No account, no password, no signup form.</p></div></li>
+        <li><span class="step-marker">3</span><div class="step-content"><strong>Availability builds over time</strong><p>Participants mark availability across the date range and can update votes as their schedule changes.</p></div></li>
+        <li><span class="step-marker">4</span><div class="step-content"><strong>Best dates surface automatically</strong><p>ReadyRoll shows which dates work for everyone, and highlights the best alternatives.</p></div></li>
+        <li><span class="step-marker">5</span><div class="step-content"><strong>Host marks planned days and continues using the board</strong><p>Once a date is chosen, the host marks it as planned. The board stays active for future planning.</p></div></li>
+      </ol>
+    </div>
   </section>
 
   <section class="section prose">
@@ -60,19 +63,24 @@ import { externalLinks } from '../data/links';
 
   <section class="section prose">
     <div class="section-heading"><h2>Where ReadyRoll is heading</h2></div>
-    <p class="muted-note">Roadmap is subject to change based on usage and feedback.</p>
-    <ul class="quiet-list">
-      <li><strong>Better group-chat support</strong><br/>Improve the Discord bot with clearer summaries, reminders, and board visibility. Explore support for other group-chat tools such as Slack.</li>
-      <li><strong>Richer planning boards</strong><br/>Add features like notes, time preferences, location tracking, and better recurring date management.</li>
-      <li><strong>Optional accounts</strong><br/>Add accounts for people who want saved groups, history, and preferences, while keeping the current accountless flow available.</li>
-      <li><strong>Stronger organiser tools</strong><br/>Improve board management, participant controls, and organiser workflows.</li>
-    </ul>
+    <div class="contained-panel">
+      <p class="muted-note">Roadmap is subject to change based on usage and feedback.</p>
+      <ul class="roadmap-list">
+        <li><strong>Better group-chat support</strong><p>Improve the Discord bot with clearer summaries, reminders, and board visibility. Explore support for other group-chat tools such as Slack.</p></li>
+        <li><strong>Richer planning boards</strong><p>Add features like notes, time preferences, location tracking, and better recurring date management.</p></li>
+        <li><strong>Optional accounts</strong><p>Add accounts for people who want saved groups, history, and preferences, while keeping the current accountless flow available.</p></li>
+        <li><strong>Stronger organiser tools</strong><p>Improve board management, participant controls, and organiser workflows.</p></li>
+      </ul>
+    </div>
   </section>
 
   <section class="section prose">
     <div class="section-heading"><h2>Technical notes</h2></div>
-    <div class="notes-grid">
-      <div>Next.js</div><div>TypeScript</div><div>Tailwind CSS</div><div>Supabase</div><div>Vercel</div><div>Discord Interactions API</div><div>Link/token participation model</div><div>Server-side Supabase access</div>
+    <div class="contained-panel">
+      <ul class="technical-notes-list">
+        <li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>Supabase</li><li>Vercel</li><li>Discord Interactions API</li><li>Link/token participation model</li><li>Server-side Supabase access</li>
+      </ul>
     </div>
   </section>
+  </div>
 </BaseLayout>

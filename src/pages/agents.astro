@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { externalLinks } from '../data/links';
 ---
 <BaseLayout title="Agents Suite">
+  <div class="content-page">
   <section class="hero">
     <h1>Agents Suite</h1>
     <p>A growing set of practical data agents built to understand agent architecture from the ground up.</p>
@@ -82,4 +83,5 @@ import { externalLinks } from '../data/links';
     <p>The suite is moving from local deterministic tools toward agents with state, review loops, and tool-calling. The early agents are deliberately simple because the goal is to understand the building blocks before adding complexity.</p>
     <p>Eventually, the suite will include a coordinator agent that can route work across specialist agents based on task type and context. Before that happens, the individual agents need to be useful, traceable, and trustworthy on their own.</p>
   </section>
+  </div>
 </BaseLayout>

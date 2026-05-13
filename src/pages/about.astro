@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { externalLinks } from '../data/links';
 ---
 <BaseLayout title="About">
+  <div class="content-page">
   <section class="hero">
     <h1>About</h1>
     <p>I work in data and product, and I build small software projects outside work.</p>
@@ -37,4 +38,5 @@ import { externalLinks } from '../data/links';
     <p><a class="link-arrow" href={externalLinks.github} target="_blank" rel="noreferrer">GitHub →</a></p>
     <p class="muted-note">LinkedIn is the best place to contact me for now.</p>
   </section>
+  </div>
 </BaseLayout>
