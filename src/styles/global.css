@@ -37,6 +37,14 @@ ul, ol { margin: .25rem 0 0; padding-left: 1.25rem; }
 li + li { margin-top: .45rem; }
 
 .hero, .prose { max-width: var(--prose); }
+.hero::before{
+  content:"";
+  display:block;
+  width:3.5rem;
+  height:2px;
+  margin:0 0 1.4rem;
+  background:linear-gradient(90deg,var(--color-accent),var(--color-accent-40));
+}
 .section { margin-top: 4.6rem; }
 .section-heading { display: flex; align-items: center; gap: .8rem; margin-bottom: 1.25rem; }
 .section-heading::before { content: ""; width: 2rem; height: 1.5px; background: linear-gradient(90deg, var(--color-accent), var(--color-accent-40)); flex: none; }
@@ -81,6 +89,7 @@ li + li { margin-top: .45rem; }
 .timeline{display:grid;gap:.75rem;counter-reset:step}
 .timeline li{list-style:none;position:relative;padding-left:2.1rem}
 .timeline li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:.1rem;width:1.35rem;height:1.35rem;border-radius:999px;border:1px solid var(--color-accent-40);color:var(--color-accent);font-size:.78rem;display:grid;place-items:center;font-weight:640;background:var(--color-paper)}
+.timeline-planned{counter-reset:step 3}
 
 .agent-points{display:grid;gap:.45rem;margin:.9rem 0}
 .agent-points p{margin:0}
