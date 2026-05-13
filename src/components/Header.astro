@@ -8,7 +8,7 @@ const nav = [
 ];
 ---
 <header class="container site-header">
-  <a href="/" class="brand">The Workbench</a>
+  <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"></span>The Workbench</a>
   <nav aria-label="Primary">
     <ul>
       {nav.map((item) => (
@@ -20,10 +20,11 @@ const nav = [
   </nav>
 </header>
 <style>
-.site-header{display:flex;justify-content:space-between;gap:1rem;padding:1.25rem 1.25rem .75rem;align-items:center}
-.brand{text-decoration:none;font-weight:600}
+.site-header{display:flex;justify-content:space-between;gap:1rem;padding:1.35rem 1.5rem 1rem;align-items:center;border-bottom:1px solid var(--color-ink-12)}
+.brand{display:inline-flex;align-items:center;gap:.65rem;text-decoration:none;font-weight:600;color:var(--color-ink)}
+.brand-mark{width:3px;height:18px;background:var(--color-accent);border-radius:2px}
 ul{display:flex;flex-wrap:wrap;list-style:none;gap:1rem;margin:0;padding:0}
-a{text-decoration:none;color:var(--color-muted)}
-a[aria-current='page']{color:var(--color-ink);text-decoration:underline;text-underline-offset:.25em}
+a{text-decoration:none;color:var(--color-muted);font-size:.95rem}
+a[aria-current='page']{color:var(--color-ink);text-decoration:underline;text-underline-offset:.24em}
 a:hover,a:focus-visible{color:var(--color-ink)}
 </style>
