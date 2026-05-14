@@ -1,20 +1,26 @@
 ---
 import { externalLinks } from '../data/links';
 ---
-<footer class="container footer">
-  <div class="brand-wrap"><span class="brand-mark" aria-hidden="true"></span><span>The Workbench</span></div>
-  <div class="links">
-    <a href={externalLinks.github} target="_blank" rel="noreferrer">GitHub</a>
-    <a href={externalLinks.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-    <a href={externalLinks.readyroll} target="_blank" rel="noreferrer">ReadyRoll</a>
+<footer class="site-footer">
+  <div class="site-shell site-footer__inner">
+    <a class="footer-brand" href="/" aria-label="The Workbench home">
+      <span class="footer-brand__mark" aria-hidden="true"></span>
+      <span>The Workbench</span>
+    </a>
+    <nav class="footer-links" aria-label="Footer links">
+      <a class="icon-link" href={externalLinks.github} target="_blank" rel="noreferrer" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2.25a9.75 9.75 0 0 0-3.08 19c.49.09.67-.21.67-.47v-1.71c-2.72.59-3.29-1.16-3.29-1.16-.45-1.14-1.1-1.44-1.1-1.44-.9-.62.07-.61.07-.61.99.07 1.51 1.02 1.51 1.02.88 1.5 2.3 1.07 2.86.82.09-.64.35-1.07.63-1.32-2.17-.25-4.45-1.09-4.45-4.83 0-1.07.38-1.94 1.01-2.62-.1-.25-.44-1.25.1-2.59 0 0 .83-.27 2.69 1 .78-.22 1.61-.33 2.44-.33.83 0 1.66.11 2.44.33 1.86-1.27 2.68-1 2.68-1 .55 1.34.21 2.34.11 2.59.63.68 1.01 1.55 1.01 2.62 0 3.75-2.29 4.58-4.47 4.82.36.31.68.92.68 1.85v2.56c0 .26.18.57.68.47A9.75 9.75 0 0 0 12 2.25Z" />
+        </svg>
+      </a>
+      <a class="icon-link" href={externalLinks.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.94 8.84H3.88V19.5h3.06V8.84ZM5.41 4.5a1.77 1.77 0 1 0 0 3.54 1.77 1.77 0 0 0 0-3.54Zm14.71 8.72c0-3.04-1.62-4.45-3.78-4.45a3.25 3.25 0 0 0-2.96 1.63h-.04V8.84h-2.94V19.5h3.06v-5.27c0-1.39.26-2.74 1.99-2.74 1.7 0 1.72 1.59 1.72 2.83v5.18h3.06l-.01-6.28Z" />
+        </svg>
+      </a>
+      <a class="footer-readyroll text-link text-link--muted" href={externalLinks.readyroll} target="_blank" rel="noreferrer">
+        ReadyRoll
+      </a>
+    </nav>
   </div>
 </footer>
-<style>
-.footer{border-top:1px solid var(--color-border);padding:1.25rem 1.6rem 2.35rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:var(--color-muted);align-items:center}
-.brand-wrap{display:inline-flex;align-items:baseline;gap:.72rem;color:var(--color-ink);font-weight:620;line-height:1}
-.brand-mark{width:5px;height:20px;background:var(--color-accent);border-radius:1px;transform:translateY(2px)}
-.links{display:flex;gap:1rem;flex-wrap:wrap}
-.links a{text-decoration:none;color:var(--color-muted);font-size:.95rem}
-.links a:hover,.links a:focus-visible{text-decoration:underline;color:var(--color-ink)}
-.links a:focus-visible{outline:1px solid var(--color-accent-40);outline-offset:3px;border-radius:2px}
-</style>

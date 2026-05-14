@@ -2,17 +2,33 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
-const { title } = Astro.props;
+
+const {
+  title = 'The Workbench',
+  description = 'Small software projects around data, coordination, and practical AI.'
+} = Astro.props;
+
+const pageTitle = title === 'The Workbench' ? 'The Workbench' : `${title} | The Workbench`;
 ---
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{title} | The Workbench</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{pageTitle}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <Header currentPath={Astro.url.pathname} />
-    <main class="container"><slot /></main>
+    <main>
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>

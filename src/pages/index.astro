@@ -1,62 +1,130 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const progression = [
+  'Deterministic CLI',
+  'Hybrid local + LLM',
+  'Framework agents',
+  'Multi-agent workflows',
+  'Capstone coordinator'
+];
+
+const principles = [
+  {
+    title: 'Useful before impressive',
+    body: 'Build what solves real problems, not what sounds clever.'
+  },
+  {
+    title: 'Deterministic where possible',
+    body: 'Prefer predictable logic over probabilistic outputs when you can.'
+  },
+  {
+    title: 'LLMs as support, not source of truth',
+    body: 'Use AI for polish and suggestions, not as the primary decision maker.'
+  },
+  {
+    title: 'Clear traces, reports, and documentation',
+    body: 'Make the work visible so others can follow and verify it.'
+  },
+  {
+    title: 'Small systems that are easy to inspect',
+    body: 'Keep projects simple enough to understand completely.'
+  }
+];
 ---
-<BaseLayout title="Home">
-  <div class="home-page">
-  <section class="hero">
-    <h1>The Workbench</h1>
-    <p>Small software projects around data, coordination, and practical AI.</p>
-    <p>This is a place for projects that are useful enough to explain properly. Some are live products. Some are learning projects. All of them are built around the same idea: keep the system understandable, make the work traceable, and avoid making things more complicated than they need to be.</p>
-    <p><strong>By Adam Ojrzynski</strong></p>
-  </section>
-
-  <section class="section card card-feature home-card wide-section">
-    <p class="label">LIVE PRODUCT</p>
-    <h2>ReadyRoll</h2>
-    <p>A no-account scheduling app that helps groups find the best date to meet.</p>
-    <p class="narrative-block">ReadyRoll started from a small coordination problem: groups want to meet, but finding a date often turns into a long thread of maybes and reminders.</p>
-    <div class="meta-grid">
-      <div><p class="meta-label">STATUS</p><p class="meta-value">Live product</p></div>
-      <div><p class="meta-label">STACK</p><p class="meta-value">Next.js, TypeScript, Tailwind, Supabase, Vercel</p></div>
-      <div><p class="meta-label">FEATURES</p><p class="meta-value">Discord bot integration</p></div>
-    </div>
-    <p class="card-link-row"><a class="link-arrow" href="/readyroll/">Read about ReadyRoll →</a></p>
-  </section>
-
-  <section class="section card card-feature home-card wide-section">
-    <p class="label">AGENTS SUITE</p>
-    <h2>Agents Suite</h2>
-    <p>A growing suite of practical data agents built to understand agent architecture from the ground up.</p>
-    <p class="narrative-block">The suite starts with simple local Python agents that do recognisable data work: profiling datasets, reconciling records, and drafting data dictionaries. The aim is to learn where deterministic logic, review loops, and LLM support each belong.</p>
-    <div class="meta-grid">
-      <div><p class="meta-label">TYPE</p><p class="meta-value">Python CLI agents</p></div>
-      <div><p class="meta-label">APPROACH</p><p class="meta-value">Deterministic checks, traceable reports</p></div>
-      <div><p class="meta-label">OUTPUT</p><p class="meta-value">Optional LLM polish</p></div>
-    </div>
-    <div class="progression-row">
-      <p class="meta-label">PROGRESSION</p>
-      <div class="progression-pills" aria-label="Agents suite progression">
-        <span>Deterministic CLI</span><i aria-hidden="true">→</i><span>Hybrid local + LLM</span><i aria-hidden="true">→</i><span>Framework agents</span><i aria-hidden="true">→</i><span>Multi-agent workflows</span><i aria-hidden="true">→</i><span>Capstone coordinator</span>
+<BaseLayout title="The Workbench">
+  <div class="page home-page">
+    <section class="site-shell hero" aria-labelledby="home-title">
+      <span class="hero__rule" aria-hidden="true"></span>
+      <h1 id="home-title">The Workbench</h1>
+      <p class="hero__lead">Small software projects around data, coordination, and practical AI.</p>
+      <div class="hero__copy">
+        <p>This is a place for projects that are useful enough to explain properly. Some are live products. Some are learning projects. All of them are built around the same idea: keep the system understandable, make the work traceable, and avoid making things more complicated than they need to be.</p>
+        <p class="hero__byline">By Adam Ojrzynski</p>
       </div>
-    </div>
-    <p class="card-link-row"><a class="link-arrow" href="/agents/">Explore the suite →</a></p>
-  </section>
+    </section>
 
-  <section class="section card card-future home-card wide-section">
-    <p class="label">ON THE BENCH</p>
-    <h2>Future work</h2>
-    <p>This site will grow slowly. New projects will be added when they are mature enough to explain clearly and useful enough to sit alongside the main work.</p>
-  </section>
+    <section class="site-shell home-projects" aria-label="Featured projects">
+      <div class="stack">
+        <article class="feature-card">
+          <p class="feature-card__label">Live Product</p>
+          <h2 class="feature-card__title">ReadyRoll</h2>
+          <p class="feature-card__summary">A no-account scheduling app that helps groups find the best date to meet.</p>
+          <p class="feature-card__narrative">ReadyRoll started from a small coordination problem: groups want to meet, but finding a date often turns into a long thread of maybes and reminders.</p>
+          <div class="metadata-grid" aria-label="ReadyRoll details">
+            <div>
+              <p class="meta-label">Status</p>
+              <p class="meta-value">Live product</p>
+            </div>
+            <div>
+              <p class="meta-label">Stack</p>
+              <p class="meta-value">Next.js, TypeScript, Tailwind, Supabase, Vercel</p>
+            </div>
+            <div>
+              <p class="meta-label">Features</p>
+              <p class="meta-value">Discord bot integration</p>
+            </div>
+          </div>
+          <p class="feature-card__link"><a class="text-link" href="/readyroll/">Read about ReadyRoll</a></p>
+        </article>
 
-  <section class="section section-principles wide-section">
-    <div class="section-heading"><h2>Working Principles</h2></div>
-    <ul class="principles-list">
-      <li><h3>Useful before impressive</h3><p>Build what solves real problems, not what sounds clever.</p></li>
-      <li><h3>Deterministic where possible</h3><p>Prefer predictable logic over probabilistic outputs when you can.</p></li>
-      <li><h3>LLMs as support, not source of truth</h3><p>Use AI for polish and suggestions, not as the primary decision maker.</p></li>
-      <li><h3>Clear traces, reports, and documentation</h3><p>Make the work visible so others can follow and verify it.</p></li>
-      <li><h3>Small systems that are easy to inspect</h3><p>Keep projects simple enough to understand completely.</p></li>
-    </ul>
-  </section>
+        <article class="feature-card">
+          <p class="feature-card__label">Agents Suite</p>
+          <h2 class="feature-card__title">Agents Suite</h2>
+          <p class="feature-card__summary">A growing suite of practical data agents built to understand agent architecture from the ground up.</p>
+          <p class="feature-card__narrative">The suite starts with simple local Python agents that do recognisable data work: profiling datasets, reconciling records, and drafting data dictionaries. The aim is to learn where deterministic logic, review loops, and LLM support each belong.</p>
+          <div class="metadata-grid" aria-label="Agents Suite details">
+            <div>
+              <p class="meta-label">Type</p>
+              <p class="meta-value">Python CLI agents</p>
+            </div>
+            <div>
+              <p class="meta-label">Approach</p>
+              <p class="meta-value">Deterministic checks, traceable reports</p>
+            </div>
+            <div>
+              <p class="meta-label">Output</p>
+              <p class="meta-value">Optional LLM polish</p>
+            </div>
+          </div>
+          <div class="progression">
+            <p class="meta-label">Progression</p>
+            <div class="progression__chips" aria-label="Agents Suite progression">
+              {progression.map((item, index) => (
+                <>
+                  <span class="chip">{item}</span>
+                  {index < progression.length - 1 && <span class="chip-arrow" aria-hidden="true">-&gt;</span>}
+                </>
+              ))}
+            </div>
+          </div>
+          <p class="feature-card__link"><a class="text-link" href="/agents/">Explore the suite</a></p>
+        </article>
+
+        <aside class="callout" aria-labelledby="future-work-title">
+          <div class="callout__inner">
+            <p class="label">On the Bench</p>
+            <h2 id="future-work-title">Future work</h2>
+            <p>This site will grow slowly. New projects will be added when they are mature enough to explain clearly and useful enough to sit alongside the main work.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="site-shell principles-section" aria-labelledby="principles-title">
+      <div class="principles-box">
+        <div class="section-heading section-heading--wide section-heading--large">
+          <h2 id="principles-title">Working Principles</h2>
+        </div>
+        <ul class="dot-list">
+          {principles.map((principle) => (
+            <li>
+              <h3>{principle.title}</h3>
+              <p>{principle.body}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   </div>
 </BaseLayout>
