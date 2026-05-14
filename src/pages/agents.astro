@@ -4,20 +4,20 @@ import { externalLinks } from '../data/links';
 
 const explorationCards = [
   {
-    title: 'Deterministic where possible',
-    body: 'Start with logic that can be tested, debugged, and trusted. Use probabilistic outputs only when deterministic checks are not enough.'
+    title: 'What makes something an agent',
+    body: 'Exploring the difference between a script, a prompt, a tool, and an agent that can reason, act, review, or coordinate work.'
   },
   {
-    title: 'LLMs as support, not source of truth',
-    body: 'Let the LLM polish, suggest, or explain. Do not let it make core decisions about data quality, correctness, or business logic.'
+    title: 'Start simple, then add layers',
+    body: 'Begin with local tools and clear outputs, then add LLM support, review loops, frameworks, state, tool use, and coordination where they help.'
   },
   {
-    title: 'Bounded agent decisions',
-    body: 'Give agents clear tasks, defined inputs, and constrained outputs. Avoid open-ended agent loops that are hard to trace or stop.'
+    title: 'Match the method to the job',
+    body: 'Some tasks need rules and repeatability. Others benefit from probabilistic help. The use case should decide the architecture.'
   },
   {
     title: 'Traceable outputs and review loops',
-    body: 'Every agent should produce artifacts you can inspect, review, and verify. Make the work visible so others can follow it.'
+    body: 'Every agent should leave enough evidence for someone to understand, check, and improve its work.'
   }
 ];
 
@@ -147,15 +147,15 @@ const plannedAgents = [
   }
 ];
 ---
-<BaseLayout title="Agents Suite" description="A growing set of practical data agents built to understand agent architecture from the ground up.">
+<BaseLayout title="Agents Suite" description="A staged set of data agents for learning agent architecture properly.">
   <div class="page agents-page">
     <section class="site-shell hero" aria-labelledby="agents-title">
       <span class="hero__rule" aria-hidden="true"></span>
       <h1 id="agents-title">Agents Suite</h1>
-      <p class="hero__lead">A growing set of practical data agents built to understand agent architecture from the ground up.</p>
+      <p class="hero__lead">A staged set of data agents for learning agent architecture properly.</p>
       <div class="hero__copy">
-        <p>The Agents Suite is my way of learning agent architecture by building small tools that do recognisable data work. The early agents are deliberately local, simple, and traceable: Python CLIs, deterministic checks, clear reports, and optional LLM polish.</p>
-        <p>The point is not to hide everything behind an LLM. The point is to understand what should be automated, what should be reviewed, and where an LLM is actually useful.</p>
+        <p>The Data Agent Suite is my way of learning agents by building them in layers. It starts with local tools that use deterministic checks and traceable outputs, then gradually adds LLM support, review loops, tool use, state, frameworks, and multi-agent coordination.</p>
+        <p>The goal is to understand what makes something an agent, how these systems are built, and when an agent is more useful than simply asking an LLM.</p>
       </div>
     </section>
 
@@ -251,7 +251,7 @@ const plannedAgents = [
             </section>
           ))}
         </div>
-        <p class="panel-note">Planned agents are included to show the intended direction of the suite. They are not presented as completed work.</p>
+        <p class="panel-note">Planned agents are included to show the intended direction of the suite. This roadmap may change.</p>
       </div>
     </section>
 

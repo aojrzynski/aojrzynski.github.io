@@ -2,24 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { externalLinks } from '../data/links';
 
-const buildPrinciples = [
-  {
-    title: 'Small systems',
-    body: 'I like projects that can be understood completely, not just demoed.'
-  },
-  {
-    title: 'Useful before impressive',
-    body: 'A tool should remove friction before it tries to look clever.'
-  },
-  {
-    title: 'Traceable by default',
-    body: 'Good systems make it possible to see what happened and why.'
-  },
-  {
-    title: 'AI with boundaries',
-    body: 'I am interested in AI where it supports a real workflow, not where it becomes the whole point.'
-  }
-];
 ---
 <BaseLayout title="About" description="About Adam Ojrzynski and The Workbench.">
   <div class="page about-page">
@@ -27,8 +9,8 @@ const buildPrinciples = [
       <span class="hero__rule" aria-hidden="true"></span>
       <h1 id="about-title">About</h1>
       <div class="hero__copy">
-        <p>I work in data and product, and I build small software projects outside work.</p>
-        <p>Most of my work sits somewhere between messy data, unclear requirements, product decisions, and delivery. I tend to be most useful when the problem is not fully shaped yet and someone needs to turn it into something people can understand, build, and use.</p>
+        <p>I’m Adam Ojrzynski. I work across data, product, and technology, with a background that started close to the code and gradually moved into leadership.</p>
+        <p>Most of my work now is about understanding how data, systems, teams, and products fit together. I use that view to shape direction, work through technical trade-offs, and help teams build systems and products that make sense in the real world.</p>
       </div>
     </section>
 
@@ -37,8 +19,8 @@ const buildPrinciples = [
         <h2 id="got-here-title">How I got here</h2>
       </div>
       <div class="prose">
-        <p>I started closer to the hands-on side of things: websites, analytics, reporting, data pipelines, and the operational work around digital products. Over time, that moved into product management, data leadership, governance, migration, and larger data programmes.</p>
-        <p>The common thread is fairly simple: take something messy, understand what matters, and build a clearer way forward.</p>
+        <p>I studied Computer Science and started out close to the code. My early work was in the broad, hands-on world of start ups and small business: software development, analytics, data engineering, product support, and whatever else needed building or fixing.</p>
+        <p>Over time, that moved into data product management, governance, migration, strategy, and leadership roles. The common thread has been the same: understand the system, understand the why, and turn unclear problems into work that teams can build, use, and explain.</p>
       </div>
     </section>
 
@@ -47,23 +29,19 @@ const buildPrinciples = [
         <h2 id="workbench-exists-title">Why The Workbench exists</h2>
       </div>
       <div class="prose">
-        <p>The Workbench is where I keep the projects that are useful enough to explain properly.</p>
-        <p>Some are live products, like ReadyRoll. Some are learning projects, like the Agents Suite. I use them to explore ideas properly: not just what can be built, but what should be deterministic, what should be reviewed, where an LLM helps, and where it gets in the way.</p>
+        <p>The Workbench is my public space for things I’m building or exploring outside the usual work setting.</p>
+        <p>Some of it is products, like ReadyRoll. Some of it is more educational, like the Data Agent Suite. Some of it may become writing, prototypes, notes, or experiments. The point is to have one place where my work can live, even if each project has a different reason for existing.</p>
       </div>
     </section>
 
-    <section class="site-shell section" aria-labelledby="build-title">
+    <section class="site-shell section" aria-labelledby="outside-work-title">
       <div class="section-heading">
-        <h2 id="build-title">How I like to build</h2>
+        <h2 id="outside-work-title">Outside the work</h2>
       </div>
-      <ul class="dot-list">
-        {buildPrinciples.map((principle) => (
-          <li>
-            <h3>{principle.title}</h3>
-            <p>{principle.body}</p>
-          </li>
-        ))}
-      </ul>
+      <div class="prose">
+        <p>Away from work, I spend a lot of time reading, running, playing games, and getting pulled into whatever topic has caught my attention that month.</p>
+        <p>That usually means a mix of books, RPGs, strategy games, technical rabbit holes, and small projects that start as “I wonder if this would work".</p>
+      </div>
     </section>
 
     <section class="site-shell section" aria-labelledby="contact-title">
