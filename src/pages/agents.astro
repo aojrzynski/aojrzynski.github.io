@@ -4,158 +4,141 @@ import { externalLinks } from '../data/links';
 
 const explorationCards = [
   {
-    title: 'What makes something an agent',
-    body: 'Exploring the difference between a script, a prompt, a tool, and an agent that can reason, act, review, or coordinate work.'
+    title: 'Deterministic evidence first',
+    body: 'The core facts come from repeatable checks, profiles, comparisons, validations, and trace files.'
   },
   {
-    title: 'Start simple, then add layers',
-    body: 'Begin with local tools and clear outputs, then add LLM support, review loops, frameworks, state, tool use, and coordination where they help.'
+    title: 'Bounded LLM support',
+    body: 'LLMs are used only where they help with wording, suggestions, or review notes from safe context.'
   },
   {
-    title: 'Match the method to the job',
-    body: 'Some tasks need rules and repeatability. Others benefit from probabilistic help. The use case should decide the architecture.'
+    title: 'Review-ready artifacts',
+    body: 'Each agent writes outputs a person can inspect: reports, traces, findings, summaries, exceptions, or review packs.'
   },
   {
-    title: 'Traceable outputs and review loops',
-    body: 'Every agent should leave enough evidence for someone to understand, check, and improve its work.'
+    title: 'Human judgement stays outside the tool',
+    body: 'The agents prepare evidence and questions. They do not approve, certify, or replace review.'
   }
 ];
 
-const currentStages = [
+const suitePhases = [
   {
-    number: 1,
-    title: 'Deterministic CLI',
-    body: 'Local Python tools that run predictable checks and produce traceable outputs without LLMs.'
-  },
-  {
-    number: 2,
-    title: 'Local bounded agent',
-    body: 'Agents with constrained tasks, defined inputs, and clear stopping points.'
-  },
-  {
-    number: 3,
-    title: 'Hybrid local + LLM support',
-    body: 'Combine deterministic logic with optional LLM polish for summaries or suggestions.'
-  }
-];
-
-const plannedStages = [
-  {
-    number: 4,
-    title: 'Framework agents',
-    body: 'Use agent frameworks for tool-calling, state management, and review loops.'
-  },
-  {
-    number: 5,
-    title: 'Multi-agent workflows',
-    body: 'Multiple specialist agents working together on connected tasks.'
-  },
-  {
-    number: 6,
-    title: 'Capstone coordinator',
-    body: 'A coordinator agent that routes work across specialist agents based on task type and context.'
-  }
-];
-
-const completedAgents = [
-  {
-    label: 'Deterministic CLI / Local bounded agent',
-    title: 'Data Quality Triage Agent',
-    summary: 'Profiles datasets and flags likely data quality issues.',
-    href: externalLinks.dqtAgent,
-    details: [
+    label: 'Phase 1',
+    title: 'Data foundations',
+    agents: [
       {
-        label: 'Why it exists',
-        value: 'Messy datasets often need a quick first pass before anyone knows where to look.'
+        number: 1,
+        title: 'Data Quality Triage Agent',
+        helps: 'Helps with the first pass of understanding what looks wrong in a dataset.',
+        demonstrates: 'deterministic data quality checks with optional LLM-polished reporting.',
+        href: externalLinks.dqtAgent
       },
       {
-        label: 'What it does',
-        value: 'Runs deterministic checks for missing values, duplicate keys, date gaps, outliers, schema surprises, and unexpected categorical values.'
+        number: 2,
+        title: 'Data Reconciliation Agent',
+        helps: 'Checks whether source-to-target movement preserved the important records and mapped values.',
+        demonstrates: 'mapping-driven comparison, exception outputs, and traceable reconciliation.',
+        href: externalLinks.reconciliationAgent
       },
       {
-        label: 'Demonstrates',
-        value: 'A local deterministic agent can be useful without handing core judgement to an LLM.'
-      },
-      {
-        label: 'Outputs',
-        value: 'Traceable reports, run summaries, optional LLM-polished explanation.'
+        number: 3,
+        title: 'Data Dictionary Agent',
+        helps: 'Creates first-pass data dictionaries from local CSV and XLSX datasets.',
+        demonstrates: 'deterministic profiling as the evidence base, with optional LLM wording support.',
+        href: externalLinks.dictionaryAgent
       }
     ]
   },
   {
-    label: 'Deterministic CLI / Config-driven validation',
-    title: 'Data Reconciliation Agent',
-    summary: 'Validates source-to-target data using mapping config and traceable comparison outputs.',
-    href: externalLinks.reconciliationAgent,
-    details: [
+    label: 'Phase 2',
+    title: 'Rules, risk, and test design',
+    agents: [
       {
-        label: 'Why it exists',
-        value: 'Migration and integration work often needs a clear answer to what matched, what is missing, and what changed.'
+        number: 4,
+        title: 'Data Contract Review Agent',
+        helps: 'Checks whether a dataset matches agreed contract rules.',
+        demonstrates: 'repeatable validation against required columns, types, nulls, allowed values, and other rules.',
+        href: externalLinks.contractReviewAgent
       },
       {
-        label: 'What it does',
-        value: 'Detects missing records, unexpected records, and value mismatches between source and target datasets.'
+        number: 5,
+        title: 'Sensitive Field Review Agent',
+        helps: 'Flags fields that may need careful human review before data is shared, migrated, analysed, or used downstream.',
+        demonstrates: 'policy-led sensitive-field indicators without legal or compliance verdicts.',
+        href: externalLinks.sensitiveFieldReviewAgent
       },
       {
-        label: 'Demonstrates',
-        value: 'A practical agent can combine config, deterministic comparison logic, exception outputs, and optional summary polish.'
-      },
-      {
-        label: 'Outputs',
-        value: 'Traceable reports, exception CSVs, optional LLM summary.'
+        number: 6,
+        title: 'Data Test Suggestion Agent',
+        helps: 'Suggests reviewable data tests from profiling evidence and supplied context.',
+        demonstrates: 'LLM-assisted test design with deterministic validation of candidates.',
+        href: externalLinks.testSuggestionAgent
       }
     ]
   },
   {
-    label: 'Hybrid local + LLM support',
-    title: 'Data Dictionary Agent',
-    summary: 'Creates first-pass data dictionaries from CSV and XLSX datasets.',
-    href: externalLinks.dictionaryAgent,
-    details: [
+    label: 'Phase 3',
+    title: 'Review workflows',
+    agents: [
       {
-        label: 'Why it exists',
-        value: 'Data dictionaries are useful but often missing, stale, or too slow to create manually.'
+        number: 7,
+        title: 'Dataset Onboarding Reviewer Workflow',
+        helps: 'Prepares an early review pack for a new dataset before people start relying on it.',
+        demonstrates: 'a workflow-shaped agent that moves from profile to context gaps, questions, answers, and report.',
+        href: externalLinks.onboardingReviewerWorkflow
       },
       {
-        label: 'What it does',
-        value: 'Profiles datasets, infers useful field information, applies config overrides, and creates first-pass dictionary outputs.'
+        number: 8,
+        title: 'Data Quality Investigation Workflow',
+        helps: 'Helps investigate a stated data quality concern using current and optional baseline files.',
+        demonstrates: 'evidence-led investigation notes without claiming root cause.',
+        href: externalLinks.qualityInvestigationWorkflow
       },
       {
-        label: 'Demonstrates',
-        value: 'A hybrid local-first agent can use deterministic profiling as the base and LLM suggestions only for safe description polish.'
-      },
+        number: 9,
+        title: 'Project Evidence Review Agent',
+        helps: 'Reviews scattered project evidence and highlights what is supported, missing, unclear, or in tension.',
+        demonstrates: 'evidence-pack construction, citation-style review, optional LLM notes, and safe validation.',
+        href: externalLinks.projectEvidenceReviewAgent
+      }
+    ]
+  },
+  {
+    label: 'Phase 4',
+    title: 'Migration review',
+    agents: [
       {
-        label: 'Outputs',
-        value: 'Data dictionary draft, trace artifacts, report artifacts, optional LLM description suggestions.'
+        number: 10,
+        title: 'Data Migration Readiness Review Agent',
+        helps: 'Reviews a migration pack for visible evidence, gaps, mappings, contracts, reconciliation checks, sensitive-field indicators, and test coverage.',
+        demonstrates: 'a fuller review workflow with manifest intake, deterministic artifacts, optional LLM notes, optional LangGraph orchestration, and trace metadata.',
+        href: externalLinks.migrationReadinessReviewAgent
       }
     ]
   }
 ];
 
-const plannedAgents = [
-  {
-    title: 'Governance and review',
-    items: ['Data Contract Review Agent', 'Sensitive Data Review Agent']
-  },
-  {
-    title: 'Testing and onboarding',
-    items: ['Data Test Suggestion Agent', 'Dataset Onboarding Reviewer Agent']
-  },
-  {
-    title: 'Investigation and delivery',
-    items: ['Data Quality Investigation Workflow', 'Project Evidence Agent', 'Data Migration War Room']
-  }
+const patternItems = [
+  'Start with a practical data workflow.',
+  'Read local files or supplied evidence.',
+  'Run deterministic checks first.',
+  'Write traceable artifacts.',
+  'Add optional LLM support only after the evidence exists.',
+  'Keep human review and final judgement outside the tool.'
 ];
 ---
-<BaseLayout title="Data Agent Suite" description="A staged set of data agents for learning agent architecture properly.">
+<BaseLayout
+  title="Data Agent Suite"
+  description="A completed 10-agent suite for practical local-first data workflows, deterministic evidence, bounded LLM support, and review-ready artifacts."
+>
   <div class="page agents-page">
     <section class="site-shell hero" aria-labelledby="agents-title">
       <span class="hero__rule" aria-hidden="true"></span>
       <h1 id="agents-title">Data Agent Suite</h1>
-      <p class="hero__lead">A staged set of data agents for learning agent architecture properly.</p>
+      <p class="hero__lead">A suite of 10 local-first data agents built around practical data workflows, deterministic evidence, bounded LLM use, and review-ready artifacts.</p>
       <div class="hero__copy">
-        <p>The Data Agent Suite is my way of learning agents by building them in layers. It starts with local tools that use deterministic checks and traceable outputs, then gradually adds LLM support, review loops, tool use, state, frameworks, and multi-agent coordination.</p>
-        <p>The goal is to understand what makes something an agent, how these systems are built, and when an agent is more useful than simply asking an LLM.</p>
+        <p>The Data Agent Suite explores a practical question: where do deterministic checks, review workflows, and LLM support each belong?</p>
+        <p>The agents start with simple local tools that inspect files and produce traceable outputs. They then build toward richer review workflows where LLMs can help with explanation or suggestions, but not replace the evidence.</p>
       </div>
     </section>
 
@@ -173,96 +156,70 @@ const plannedAgents = [
       </div>
     </section>
 
-    <section class="section section--panel" aria-labelledby="progression-title">
+    <section class="section section--panel" aria-labelledby="journey-title">
       <div class="section-heading">
-        <h2 id="progression-title">Learning Progression</h2>
+        <h2 id="journey-title">The journey through the 10 agents</h2>
       </div>
-      <p class="section-note">The suite follows a deliberate path from simple local tools to agents with state, tool-calling, and coordination.</p>
-      <div class="content-panel content-panel--solid timeline-panel">
-        <div class="timeline-group">
-          <p class="timeline-label">Covered so far</p>
-          <ol class="timeline-list">
-            {currentStages.map((stage) => (
-              <li class="timeline-item">
-                <span class="timeline-number" aria-hidden="true">{stage.number}</span>
-                <div>
-                  <h3>{stage.title}</h3>
-                  <p>{stage.body}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
-        <div class="timeline-group">
-          <p class="timeline-label">Planned next</p>
-          <ol class="timeline-list" start="4">
-            {plannedStages.map((stage) => (
-              <li class="timeline-item">
-                <span class="timeline-number" aria-hidden="true">{stage.number}</span>
-                <div>
-                  <h3>{stage.title}</h3>
-                  <p>{stage.body}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--panel" aria-labelledby="completed-title">
-      <div class="section-heading section-heading--large">
-        <h2 id="completed-title">Completed Agents</h2>
-      </div>
-      <div class="stack">
-        {completedAgents.map((agent) => (
-          <article class="feature-card agent-card">
-            <p class="feature-card__label">{agent.label}</p>
-            <h3 class="feature-card__title">{agent.title}</h3>
-            <p class="feature-card__summary">{agent.summary}</p>
-            <div class="metadata-grid metadata-grid--details">
-              {agent.details.map((detail) => (
-                <div>
-                  <p class="meta-label">{detail.label}</p>
-                  <p class="meta-value">{detail.value}</p>
-                </div>
-              ))}
+      <p class="section-note">The suite moves from first-pass local checks to fuller review workflows, keeping evidence and judgement separate throughout.</p>
+      <div class="content-panel content-panel--solid suite-journey">
+        {suitePhases.map((phase) => (
+          <section class="suite-phase" aria-label={`${phase.label}: ${phase.title}`}>
+            <div class="suite-phase__heading">
+              <p class="suite-phase__label">{phase.label}</p>
+              <h3>{phase.title}</h3>
             </div>
-            <p class="feature-card__link">
-              <a class="text-link" href={agent.href} target="_blank" rel="noreferrer">View GitHub repo</a>
-            </p>
-          </article>
+            <ol class="agent-spine" start={phase.agents[0].number}>
+              {phase.agents.map((agent) => (
+                <li class="agent-spine__item">
+                  <span class="timeline-number agent-spine__number" aria-hidden="true">{agent.number}</span>
+                  <div class="agent-spine__body">
+                    <div class="agent-spine__header">
+                      <h4>{agent.title}</h4>
+                      <a class="agent-spine__link text-link" href={agent.href} target="_blank" rel="noreferrer">GitHub repo</a>
+                    </div>
+                    <p>{agent.helps}</p>
+                    <p class="agent-spine__meta"><span>Demonstrates:</span> {agent.demonstrates}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
         ))}
       </div>
     </section>
 
-    <section class="section section--panel" aria-labelledby="planned-title">
-      <div class="section-heading section-heading--large">
-        <h2 id="planned-title">Planned Agents</h2>
+    <section class="site-shell section" aria-labelledby="pattern-title">
+      <div class="section-heading">
+        <h2 id="pattern-title">Common pattern across the suite</h2>
       </div>
-      <div class="content-panel">
-        <div class="planned-list">
-          {plannedAgents.map((group) => (
-            <section aria-label={group.title}>
-              <h3>{group.title}</h3>
-              <ul>
-                {group.items.map((item) => <li>{item}</li>)}
-              </ul>
-            </section>
-          ))}
-        </div>
-        <p class="panel-note">Planned agents are included to show the intended direction of the suite. This roadmap may change.</p>
+      <div class="content-panel pattern-panel">
+        <p>Across the suite, the pattern stays deliberately consistent:</p>
+        <ol class="pattern-list">
+          {patternItems.map((item) => <li>{item}</li>)}
+        </ol>
       </div>
     </section>
 
-    <section class="site-shell section" aria-labelledby="heading-title">
+    <section class="site-shell section" aria-labelledby="changed-title">
+      <div class="section-heading">
+        <h2 id="changed-title">What changed from agent 1 to agent 10</h2>
+      </div>
+      <div class="prose">
+        <p>The early agents focus on one clear job: profile, reconcile, document, or validate.</p>
+        <p>The later agents become more workflow-shaped. They prepare review packs, manage evidence gaps, structure follow-up questions, and separate deterministic findings from optional LLM notes.</p>
+        <p>By the final agent, the suite has a fuller pattern: manifest intake, deterministic review stages, aggregated findings, Markdown summaries, optional LLM notes, orchestration seams, and trace metadata.</p>
+      </div>
+    </section>
+
+    <section class="site-shell section" aria-labelledby="future-title">
       <div class="closing-section">
         <div class="section-heading">
-          <h2 id="heading-title">Where this is heading</h2>
+          <h2 id="future-title">Where this could go</h2>
         </div>
         <div class="prose">
-          <p>The suite is moving from local deterministic tools toward agents with state, review loops, and tool-calling. The early agents are deliberately simple because the goal is to understand the building blocks before adding complexity.</p>
-          <p>Eventually, the suite will include a coordinator agent that can route work across specialist agents based on task type and context. Before that happens, the individual agents need to be useful, traceable, and trustworthy on their own.</p>
+          <p>The next step would not simply be more agents.</p>
+          <p>The more interesting direction is coordination: a router or workbench layer that can decide which specialist agent fits a given task, pass the right files and context, and keep outputs traceable across workflows.</p>
+          <p>Before that, each specialist agent needs to remain useful on its own.</p>
         </div>
       </div>
     </section>
